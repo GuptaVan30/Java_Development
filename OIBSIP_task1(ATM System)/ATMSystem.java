@@ -156,7 +156,7 @@ public class ATMSystem {
                     System.out.println("5. Quit");
                     System.out.print("Choose an option: ");
                     int choice = scanner.nextInt();
-                    scanner.nextLine();  // Consume newline
+                    scanner.nextLine();  
 
                     if (choice == 5) {
                         break;
@@ -172,13 +172,13 @@ public class ATMSystem {
                         case 2:
                             System.out.print("Enter amount to withdraw: ");
                             double withdrawAmount = scanner.nextDouble();
-                            scanner.nextLine();  // Consume newline
+                            scanner.nextLine();  
                             atm.withdraw(withdrawAmount);
                             break;
                         case 3:
                             System.out.print("Enter amount to deposit: ");
                             double depositAmount = scanner.nextDouble();
-                            scanner.nextLine();  // Consume newline
+                            scanner.nextLine();  
                             atm.deposit(depositAmount);
                             break;
                         case 4:
@@ -191,7 +191,7 @@ public class ATMSystem {
                             }
                             System.out.print("Enter amount to transfer: ");
                             double transferAmount = scanner.nextDouble();
-                            scanner.nextLine();  // Consume newline
+                            scanner.nextLine();  
                             atm.transfer(transferAmount, recipient);
                             break;
                         default:
