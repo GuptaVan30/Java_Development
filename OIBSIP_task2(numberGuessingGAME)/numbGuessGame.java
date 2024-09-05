@@ -29,14 +29,12 @@ public class numbGuessGame extends JFrame {
     private JLabel scoreLabel;
 
     public numbGuessGame() {
-        // Initialize the frame
+        
         setTitle("Guess the Number Game");
         setSize(450, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);  //This line will center the window on the screen.
 
-        
-       // Set up CardLayout
         cardLayout=new CardLayout();
         mainPanel=new JPanel(cardLayout);
         
@@ -89,13 +87,9 @@ public class numbGuessGame extends JFrame {
     private JPanel createGamePanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(6, 1));
-
-        // Initialize the game variables
         round = 1;
         totalScore = 0;
         startNewRound();
-
-        // Create and add components
         messageLabel = new JLabel("Round " + round + ": Enter your guess (1-100):", SwingConstants.CENTER);
         panel.add(messageLabel);
 
@@ -111,8 +105,6 @@ public class numbGuessGame extends JFrame {
         
         JButton backButton = new JButton("Back to Main Menu");
         panel.add(backButton);
-
-        // Add action listeners
         guessButton.addActionListener(new GuessButtonListener());
         backButton.addActionListener(e -> cardLayout.show(mainPanel, "Main Menu"));
         
@@ -124,17 +116,10 @@ public class numbGuessGame extends JFrame {
     	JPanel panel=new JPanel();
     	panel.setLayout(new BorderLayout());
     	panel.setBackground(Color.LIGHT_GRAY);
-    	
-    	
-    	
-//    	rulesPanel = new JPanel();
-//        rulesPanel.setBackground(Color.PINK);
    	
     	JLabel rulesLabel=new JLabel("Game Rules ",SwingConstants.CENTER);
     	rulesLabel.setFont(new Font("Serif", Font.BOLD, 24));
         panel.add(rulesLabel, BorderLayout.NORTH);
-       
-       
         
         JTextArea rulesText = new JTextArea(
         
@@ -154,9 +139,7 @@ public class numbGuessGame extends JFrame {
         rulesText.setEditable(false);
         rulesText.setMargin(new Insets(10, 10, 10, 10));
         panel.add(new JScrollPane(rulesText));
-//        panel.add(rulesPanel, BorderLayout.CENTER); 
-//       
-        
+
         JButton backButton = new JButton("Back to Main Menu");
         backButton.addActionListener(e -> cardLayout.show(mainPanel, "Main Menu"));
         JPanel bottomPanel = new JPanel();
@@ -206,8 +189,6 @@ public class numbGuessGame extends JFrame {
                 guessField.setEditable(false);
             }
         }
-
-        // Update the score label
         scoreLabel.setText("Score: " + totalScore);
     }
 
